@@ -1,0 +1,9 @@
+Text
+replace this 23a1d1 with aa0707
+
+Nav bar shade
+replace this 1f90bb with 720505
+
+145e7a = aa0707
+
+229ac8 = aa0707
