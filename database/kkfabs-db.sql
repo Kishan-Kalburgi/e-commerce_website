@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2018 at 09:44 AM
+-- Generation Time: Apr 23, 2018 at 09:17 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -48,7 +48,8 @@ CREATE TABLE `oc_address` (
 --
 
 INSERT INTO `oc_address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`, `custom_field`) VALUES
-(1, 1, 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 223, 3648, '');
+(1, 1, 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 223, 3648, '[]'),
+(2, 2, 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 223, 3648, '[]');
 
 -- --------------------------------------------------------
 
@@ -111,8 +112,11 @@ CREATE TABLE `oc_api_session` (
 --
 
 INSERT INTO `oc_api_session` (`api_session_id`, `api_id`, `session_id`, `ip`, `date_added`, `date_modified`) VALUES
-(5, 1, '7d11d538dd02c2496f4f2f4f4b', '::1', '2018-04-14 22:25:13', '2018-04-14 22:25:13'),
-(4, 1, 'fa35eeb537119839ba7487d13a', '::1', '2018-04-14 22:25:06', '2018-04-14 22:25:13');
+(7, 1, '0629cd273a17a17ff473c36419', '::1', '2018-04-23 01:11:26', '2018-04-23 01:11:26'),
+(6, 1, 'bfb12b5b13ce0a3bef7c989cf6', '::1', '2018-04-23 01:11:20', '2018-04-23 01:11:20'),
+(10, 1, 'f19ed0706379391f78fcb35bf4', '::1', '2018-04-23 01:14:11', '2018-04-23 01:14:11'),
+(8, 1, '4f35db25478519febfcf83e0d1', '::1', '2018-04-23 01:13:43', '2018-04-23 01:13:43'),
+(9, 1, '83947ecd41926df8d3c782fbce', '::1', '2018-04-23 01:13:59', '2018-04-23 01:14:00');
 
 -- --------------------------------------------------------
 
@@ -261,8 +265,12 @@ CREATE TABLE `oc_category` (
 
 INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 (61, '', 0, 1, 1, 2, 1, '2018-04-14 21:51:06', '2018-04-15 02:30:52'),
+(64, '', 59, 0, 1, 0, 1, '2018-04-23 01:57:40', '2018-04-23 01:57:40'),
 (60, '', 0, 1, 1, 1, 1, '2018-04-14 21:50:16', '2018-04-15 02:25:27'),
-(63, 'catalog/Categories/tshirt.jpg', 59, 1, 1, 0, 1, '2018-04-15 02:21:47', '2018-04-15 02:22:05'),
+(63, '', 59, 1, 1, 0, 1, '2018-04-15 02:21:47', '2018-04-23 01:58:06'),
+(65, '', 59, 0, 1, 0, 1, '2018-04-23 01:58:58', '2018-04-23 01:58:58'),
+(66, '', 60, 0, 1, 0, 1, '2018-04-23 02:10:58', '2018-04-23 02:10:58'),
+(67, '', 60, 0, 1, 0, 1, '2018-04-23 02:11:43', '2018-04-23 02:11:43'),
 (59, '', 0, 1, 1, 0, 1, '2018-04-14 21:45:58', '2018-04-15 02:23:51');
 
 -- --------------------------------------------------------
@@ -287,9 +295,13 @@ CREATE TABLE `oc_category_description` (
 
 INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
 (60, 1, 'Women', '&lt;p&gt;&lt;img src=&quot;http://localhost:8080/open-cart-test/upload/image/catalog/Categories/women.jpg&quot; style=&quot;width: 841px;&quot;&gt;&lt;br&gt;&lt;/p&gt;', 'women', '', ''),
+(64, 1, 'Casual Shirts', '', 'Casual Shirts', '', ''),
 (61, 1, 'Accessories', '&lt;p&gt;&lt;img src=&quot;http://localhost:8080/open-cart-test/upload/image/catalog/Categories/Acc.jpg&quot; style=&quot;width: 829px;&quot;&gt;&lt;br&gt;&lt;/p&gt;', 'Accessories', '', ''),
 (59, 1, 'Men', '&lt;p&gt;&lt;img src=&quot;http://localhost:8080/open-cart-test/upload/image/catalog/Categories/men.jpg&quot; style=&quot;width: 841px;&quot;&gt;&lt;h1&gt;&lt;/h1&gt;&lt;/p&gt;', 'men', '', ''),
-(63, 1, 'T Shirt', '', 'Tshirt', '', '');
+(63, 1, 'T Shirt', '', 'Tshirt', '', ''),
+(65, 1, 'Formal Shirts', '', 'Formal shirts', '', ''),
+(66, 1, 'Kurtas &amp; Suits', '', 'Kurtas &amp; Suits', '', ''),
+(67, 1, 'Dresses', '', 'Dresses', '', '');
 
 -- --------------------------------------------------------
 
@@ -321,6 +333,14 @@ CREATE TABLE `oc_category_path` (
 INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 (61, 61, 0),
 (60, 60, 0),
+(67, 67, 1),
+(67, 60, 0),
+(66, 66, 1),
+(66, 60, 0),
+(65, 65, 1),
+(65, 59, 0),
+(64, 64, 1),
+(64, 59, 0),
 (63, 63, 1),
 (63, 59, 0),
 (59, 59, 0);
@@ -345,7 +365,11 @@ INSERT INTO `oc_category_to_layout` (`category_id`, `store_id`, `layout_id`) VAL
 (59, 0, 0),
 (60, 0, 0),
 (61, 0, 0),
-(63, 0, 0);
+(63, 0, 0),
+(64, 0, 0),
+(65, 0, 0),
+(66, 0, 0),
+(67, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -366,7 +390,11 @@ INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 (59, 0),
 (60, 0),
 (61, 0),
-(63, 0);
+(63, 0),
+(64, 0),
+(65, 0),
+(66, 0),
+(67, 0);
 
 -- --------------------------------------------------------
 
@@ -737,7 +765,7 @@ CREATE TABLE `oc_currency` (
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 (1, 'Pound Sterling', 'GBP', '£', '', '2', 0.61250001, 1, '2014-09-25 14:40:00'),
-(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2018-04-15 07:04:59'),
+(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2018-04-23 06:55:43'),
 (3, 'Euro', 'EUR', '', '€', '2', 0.78460002, 1, '2014-09-25 14:40:00');
 
 -- --------------------------------------------------------
@@ -776,7 +804,9 @@ CREATE TABLE `oc_customer` (
 --
 
 INSERT INTO `oc_customer` (`customer_id`, `customer_group_id`, `store_id`, `language_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `custom_field`, `ip`, `status`, `safe`, `token`, `code`, `date_added`) VALUES
-(1, 1, 0, 1, 'Kishan', 'Srinivas', 'S530468@nwmissouri.edu', '1234567890', '', '3befe6c4aeb2c907a283a9b5c32992c4d0093016', 'YhqWZ1q0v', NULL, NULL, 0, 0, '', '::1', 1, 0, '', '', '2018-04-15 02:11:24');
+(1, 1, 0, 1, 'Jon', 'Venny', 'S530468@nwmissouri.edu', '1234567890', '', '3befe6c4aeb2c907a283a9b5c32992c4d0093016', 'YhqWZ1q0v', NULL, NULL, 0, 0, '[]', '::1', 1, 0, '', '', '2018-04-15 02:11:24'),
+(2, 1, 0, 1, 'Bob', 'Kenny', 'kk@gmail.com', '1234567890', '', 'e289a99d3a0740cec5762023dce20b7de81de588', 'XYBv6gNax', NULL, NULL, 0, 2, '[]', '::1', 1, 0, '', '', '2018-04-23 01:09:12'),
+(3, 1, 0, 0, 'Hunter', 'Code', 'hunter@mymail.com', '0987654321', '', 'f52a1dbda8d621727dcebcba0c1325193feae812', 'fNiL5v4xC', NULL, NULL, 0, 0, '[]', '', 1, 0, '', '', '2018-04-23 01:15:54');
 
 -- --------------------------------------------------------
 
@@ -902,7 +932,8 @@ CREATE TABLE `oc_customer_ip` (
 --
 
 INSERT INTO `oc_customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) VALUES
-(1, 1, '::1', '2018-04-15 02:11:25');
+(1, 1, '::1', '2018-04-15 02:11:25'),
+(2, 2, '::1', '2018-04-23 01:09:13');
 
 -- --------------------------------------------------------
 
@@ -925,7 +956,9 @@ CREATE TABLE `oc_customer_login` (
 
 INSERT INTO `oc_customer_login` (`customer_login_id`, `email`, `ip`, `total`, `date_added`, `date_modified`) VALUES
 (1, 'admin', '::1', 4, '2018-04-15 01:46:41', '2018-04-15 06:36:39'),
-(2, '1234567890', '::1', 1, '2018-04-15 07:12:01', '2018-04-15 07:12:01');
+(2, '1234567890', '::1', 2, '2018-04-15 07:12:01', '2018-04-23 06:09:31'),
+(3, 'kishan@nwmissouri.edu', '::1', 1, '2018-04-23 06:06:35', '2018-04-23 06:06:35'),
+(4, 's530468@nwmissouri.edu', '::1', 2, '2018-04-23 06:08:06', '2018-04-23 06:08:25');
 
 -- --------------------------------------------------------
 
@@ -1867,6 +1900,13 @@ CREATE TABLE `oc_order` (
   `date_modified` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `oc_order`
+--
+
+INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `custom_field`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_custom_field`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_custom_field`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `marketing_id`, `tracking`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
+(2, 1, 'INV-2018-00', 0, 'KK Fashions', 'http://localhost:8080/open-cart-test/upload/', 2, 1, 'Kishan', 'Kalburgi', 'kk@gmail.com', '1234567890', '', '', 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 'United States', 223, 'Missouri', 3648, '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city}, {zone} {postcode}\r\n{country}', '[]', 'Cash On Delivery', 'cod', 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 'United States', 223, 'Missouri', 3648, '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city}, {zone} {postcode}\r\n{country}', '[]', 'Flat Shipping Rate', 'flat.flat', '', '40.0000', 1, 0, '0.0000', 0, '', 1, 2, 'USD', '1.00000000', '::1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', 'en-US,en;q=0.9', '2018-04-23 01:10:35', '2018-04-23 01:10:51');
+
 -- --------------------------------------------------------
 
 --
@@ -1881,6 +1921,14 @@ CREATE TABLE `oc_order_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `oc_order_history`
+--
+
+INSERT INTO `oc_order_history` (`order_history_id`, `order_id`, `order_status_id`, `notify`, `comment`, `date_added`) VALUES
+(3, 2, 1, 0, '', '2018-04-23 01:10:46'),
+(4, 2, 1, 0, '', '2018-04-23 01:10:51');
 
 -- --------------------------------------------------------
 
@@ -1917,6 +1965,13 @@ CREATE TABLE `oc_order_product` (
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `reward` int(8) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `oc_order_product`
+--
+
+INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
+(2, 2, 51, 'Duke Stardust Men Printed Pack of 3 Round Neck T-Shirts', 'a200', 1, '35.0000', '35.0000', '0.0000', 0);
 
 -- --------------------------------------------------------
 
@@ -2023,6 +2078,15 @@ CREATE TABLE `oc_order_total` (
   `sort_order` int(3) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `oc_order_total`
+--
+
+INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `value`, `sort_order`) VALUES
+(5, 2, 'shipping', 'Flat Shipping Rate', '5.0000', 3),
+(4, 2, 'sub_total', 'Sub-Total', '35.0000', 1),
+(6, 2, 'total', 'Total', '40.0000', 9);
+
 -- --------------------------------------------------------
 
 --
@@ -2092,8 +2156,11 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 (54, 'a400', '004', '', '', '', '', '', '', 150, 6, 'catalog/Products/Women-p/2000/11511761044699-AKS-Women-Cream-Coloured--Maroon-Printed-Kurta-with-Palazzos-51511761044673-4.jpg', 0, 1, '60.0000', 0, 0, '2018-04-13', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, '2018-04-15 00:55:50', '2018-04-15 01:44:55'),
 (55, 'a500', '005', '', '', '', '', '', '', 100, 6, 'catalog/Products/Accessories-p/1000/BD-NEW-RGB-WEB-1.1_1b3f3cb6-37b5-4b27-9f77-eb0ee0cc7d56_1024x1024.jpg', 0, 1, '69.0000', 0, 0, '2018-04-13', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-15 01:43:08', '2018-04-15 02:38:35'),
 (56, 'a600', '006', '', '', '', '', '', '', 100, 6, 'catalog/Products/Accessories-p/2000/ADJ-RGB-IMAGE-1.jpg', 0, 1, '35.0000', 0, 0, '2018-04-15', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-15 01:44:38', '2018-04-15 02:38:48'),
-(50, 'a100', '001', '', '', '', '', '', '', 200, 6, 'catalog/Products/Men-p/2000/11505308293532-Puma-Men-Red-Printed-Round-Neck-T-shirt-7161505308293352-1.jpg', 16, 1, '65.0000', 0, 0, '2018-04-15', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 6, '2018-04-14 22:06:15', '2018-04-15 02:22:26'),
-(51, 'a200', '002', '', '', '', '', '', '', 200, 6, 'catalog/Products/Men-p/1000/T shirt.jpg', 12, 1, '35.0000', 0, 0, '2018-04-15', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, '2018-04-14 22:21:14', '2018-04-15 01:00:37'),
+(57, 'a1000', '', '', '', '', '', '', '', 100, 6, 'catalog/Products/Men-p/3000/1.jpg', 13, 1, '35.0000', 0, 0, '2018-04-21', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-23 02:03:10', '2018-04-23 02:04:48'),
+(58, 'a2000', '', '', '', '', '', '', '', 200, 6, 'catalog/Products/Men-p/4000/1.jpg', 13, 1, '49.0000', 0, 0, '2018-04-21', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-23 02:07:50', '2018-04-23 02:07:50'),
+(59, 'a3403', '', '', '', '', '', '', '', 300, 6, 'catalog/Products/Women-p/3000/1.jpg', 13, 1, '69.0000', 0, 0, '2018-04-13', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-23 02:13:44', '2018-04-23 02:16:11'),
+(50, 'a100', '001', '', '', '', '', '', '', 200, 6, 'catalog/Products/Men-p/2000/11505308293532-Puma-Men-Red-Printed-Round-Neck-T-shirt-7161505308293352-1.jpg', 16, 1, '65.0000', 0, 0, '2018-04-15', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 8, '2018-04-14 22:06:15', '2018-04-15 02:22:26'),
+(51, 'a200', '002', '', '', '', '', '', '', 199, 6, 'catalog/Products/Men-p/1000/T shirt.jpg', 12, 1, '35.0000', 0, 0, '2018-04-15', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 3, '2018-04-14 22:21:14', '2018-04-23 02:09:55'),
 (53, 'a300', '003', '', '', '', '', '', '', 200, 6, 'catalog/Products/Women-p/1000/11519378307445-AKS-Women-Navy--Off-White-Printed-Straight-Kurta-9971519378307264-3.jpg', 0, 1, '55.0000', 0, 0, '2018-04-13', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-15 00:53:21', '2018-04-15 01:45:08');
 
 -- --------------------------------------------------------
@@ -2136,7 +2203,10 @@ INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `desc
 (53, 1, 'AKS Women Navy &amp; Off-White Printed Straight Kurta', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Navy and off-white printed straight&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/kurta?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;kurta&lt;/a&gt;, has a shirt collar, three-quarter sleeves, a full button placket, straight hem, multiple slits&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Material &amp;amp; Care&lt;/b&gt;&lt;/span&gt;&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Cotton&amp;nbsp;&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Machine-wash&lt;/p&gt;&lt;/div&gt;', '', 'Kurta', '', ''),
 (54, 1, 'AKS Women Cream-Coloured &amp; Maroon Printed Kurta with Palazzos', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Cream-coloured and maroon printed kurta with palazzos&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Cream-coloured and maroon straight knee length kurta, has a round neck, three-quarter sleeves, straight hem, side slits&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Maroon printed palazzos, has an elasticated waistband&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Material &amp;amp; Care&lt;/b&gt;&lt;/span&gt;&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Top fabric: Pure Cotton&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Bottom fabric: Pure Cotton&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Machine-wash&lt;/p&gt;&lt;/div&gt;', '', 'Kurta', '', ''),
 (55, 1, 'BLACK STONE BEAD BRACELET - RG&amp;B', '&lt;p&gt;&lt;i style=&quot;margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; font-size: 14px; line-height: inherit; font-family: &amp;quot;Open Sans&amp;quot;; color: rgb(73, 76, 80);&quot;&gt;Our&amp;nbsp;Black Stone Bead bracelet features rose gold brushed stainless steel hardware, engraved with the signature RG&amp;amp;B logo.&lt;/i&gt;&lt;br&gt;&lt;/p&gt;', '', 'BRACELET', '', ''),
-(56, 1, 'WOVEN ADJUSTABLE SINGLE - RG&amp;B', '&lt;p&gt;&lt;i style=&quot;margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; font-size: 14px; line-height: inherit; font-family: &amp;quot;Open Sans&amp;quot;; color: rgb(73, 76, 80);&quot;&gt;This is a woven leather bracelet which features a stainless steel adjustable clasp, engraved with the signature RG&amp;amp;B logo. Available in four color ways of RoseGold &amp;amp; Black, RoseGold &amp;amp; Navy, RoseGold &amp;amp; White and All Black.&lt;/i&gt;&lt;br&gt;&lt;/p&gt;', '', 'SINGLE', '', '');
+(56, 1, 'WOVEN ADJUSTABLE SINGLE - RG&amp;B', '&lt;p&gt;&lt;i style=&quot;margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; font-size: 14px; line-height: inherit; font-family: &amp;quot;Open Sans&amp;quot;; color: rgb(73, 76, 80);&quot;&gt;This is a woven leather bracelet which features a stainless steel adjustable clasp, engraved with the signature RG&amp;amp;B logo. Available in four color ways of RoseGold &amp;amp; Black, RoseGold &amp;amp; Navy, RoseGold &amp;amp; White and All Black.&lt;/i&gt;&lt;br&gt;&lt;/p&gt;', '', 'SINGLE', '', ''),
+(57, 1, 'Highlander Blue Slim Fit Denim Shirt', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Blue lightly washed denim&amp;nbsp;shirt, has a spread collar, a full button placket, long sleeves, a chest pocket, curved hem&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Material &amp;amp; Care&lt;/b&gt;&lt;/span&gt;&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;100% cotton&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Machine-wash&lt;/p&gt;&lt;/div&gt;', '', 'Shirt', '', ''),
+(58, 1, 'Hancock Navy Slim Fit Formal Shirt', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;&lt;/p&gt;&lt;div style=&quot;box-sizing: inherit;&quot;&gt;Navy blue&amp;nbsp;formal shirt, has a spread&amp;nbsp;collar, long sleeves, a full button placket, a patch pocket, a curved hem&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Material &amp;amp; Care&lt;/b&gt;&lt;/span&gt;&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;box-sizing: inherit;&quot;&gt;Cotton and polyester&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Machine-wash&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;', '', 'Formal Shirt', '', ''),
+(59, 1, 'Anouk Women Mustard Yellow &amp; Black Printed A-line Fusion Kurta', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Mustard&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/yellow?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;yellow&lt;/a&gt;&amp;nbsp;and&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/black?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;black&lt;/a&gt;&amp;nbsp;printed A-line&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/kurta?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;kurta&lt;/a&gt;, has a mandarin collar, a&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/short?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;short&lt;/a&gt;&amp;nbsp;button placket, three-quarter roll-up sleeves, straight hem&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Material &amp;amp; Care&lt;/b&gt;&lt;/span&gt;&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;100% viscose&amp;nbsp;&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Hand-wash&lt;/p&gt;&lt;/div&gt;', '', 'Fusion Kurta', '', '');
 
 -- --------------------------------------------------------
 
@@ -2184,16 +2254,22 @@ CREATE TABLE `oc_product_image` (
 --
 
 INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
+(2438, 59, 'catalog/Products/Women-p/3000/2.jpg', 0),
+(2439, 59, 'catalog/Products/Women-p/3000/3.jpg', 0),
+(2433, 58, 'catalog/Products/Men-p/4000/3.jpg', 0),
+(2431, 57, 'catalog/Products/Men-p/3000/3.jpg', 0),
+(2432, 58, 'catalog/Products/Men-p/4000/2.jpg', 0),
 (2429, 50, 'catalog/Products/Men-p/2000/11505308293437-Puma-Men-Red-Printed-Round-Neck-T-shirt-7161505308293352-5.jpg', 0),
 (2428, 50, 'catalog/Products/Men-p/2000/11505308293483-Puma-Men-Red-Printed-Round-Neck-T-shirt-7161505308293352-3.jpg', 0),
+(2430, 57, 'catalog/Products/Men-p/3000/2.jpg', 0),
 (2427, 53, 'catalog/Products/Women-p/1000/11519378307474-AKS-Women-Navy--Off-White-Printed-Straight-Kurta-9971519378307264-2.jpg', 0),
 (2426, 53, 'catalog/Products/Women-p/1000/11519378307497-AKS-Women-Navy--Off-White-Printed-Straight-Kurta-9971519378307264-1.jpg', 0),
 (2424, 54, 'catalog/Products/Women-p/2000/11511761044726-AKS-Women-Cream-Coloured--Maroon-Printed-Kurta-with-Palazzos-51511761044673-2.jpg', 0),
 (2425, 54, 'catalog/Products/Women-p/2000/11511761044741-AKS-Women-Cream-Coloured--Maroon-Printed-Kurta-with-Palazzos-51511761044673-1.jpg', 0),
-(2419, 51, 'catalog/Products/Men-p/1000/11477468421111-Duke-Men-Tshirts-7261477468420959-3.jpg', 0),
-(2418, 51, 'catalog/Products/Men-p/1000/11477468421097-Duke-Men-Tshirts-7261477468420959-4.jpg', 0),
-(2417, 51, 'catalog/Products/Men-p/1000/11477468421080-Duke-Men-Tshirts-7261477468420959-5.jpg', 0),
-(2416, 51, 'catalog/Products/Men-p/1000/11477468421126-Duke-Men-Tshirts-7261477468420959-2.jpg', 0);
+(2437, 51, 'catalog/Products/Men-p/1000/11477468421126-Duke-Men-Tshirts-7261477468420959-2.jpg', 0),
+(2436, 51, 'catalog/Products/Men-p/1000/11477468421080-Duke-Men-Tshirts-7261477468420959-5.jpg', 0),
+(2435, 51, 'catalog/Products/Men-p/1000/11477468421097-Duke-Men-Tshirts-7261477468420959-4.jpg', 0),
+(2434, 51, 'catalog/Products/Men-p/1000/11477468421111-Duke-Men-Tshirts-7261477468420959-3.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -2315,10 +2391,14 @@ CREATE TABLE `oc_product_to_category` (
 INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
 (50, 63),
 (51, 59),
+(51, 63),
 (53, 60),
 (54, 60),
 (55, 61),
-(56, 61);
+(56, 61),
+(57, 64),
+(58, 65),
+(59, 66);
 
 -- --------------------------------------------------------
 
@@ -2353,7 +2433,10 @@ INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUE
 (53, 0, 0),
 (54, 0, 0),
 (55, 0, 0),
-(56, 0, 0);
+(56, 0, 0),
+(57, 0, 0),
+(58, 0, 0),
+(59, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -2376,7 +2459,10 @@ INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 (53, 0),
 (54, 0),
 (55, 0),
-(56, 0);
+(56, 0),
+(57, 0),
+(58, 0),
+(59, 0);
 
 -- --------------------------------------------------------
 
@@ -2579,13 +2665,20 @@ CREATE TABLE `oc_session` (
 --
 
 INSERT INTO `oc_session` (`session_id`, `data`, `expire`) VALUES
+('0629cd273a17a17ff473c36419', '{\"api_id\":\"1\"}', '2018-04-23 06:35:26'),
+('195c30d19c3b3f1bd859a71d74', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"user_id\":\"1\",\"user_token\":\"TwnKxNh2oWVI2WCLwsp2p4fKczWILeRD\",\"customer_id\":\"2\",\"shipping_address\":{\"address_id\":\"2\",\"firstname\":\"Northwest Missouri\",\"lastname\":\"University\",\"company\":\"\",\"address_1\":\"NORTHWEST MISSOURI STATE UNIVERSITY\",\"address_2\":\"800 university drive\",\"postcode\":\"64468\",\"city\":\"Maryville\",\"zone_id\":\"3648\",\"zone\":\"Missouri\",\"zone_code\":\"MO\",\"country_id\":\"223\",\"country\":\"United States\",\"iso_code_2\":\"US\",\"iso_code_3\":\"USA\",\"address_format\":\"{firstname} {lastname}\\r\\n{company}\\r\\n{address_1}\\r\\n{address_2}\\r\\n{city}, {zone} {postcode}\\r\\n{country}\",\"custom_field\":null},\"payment_address\":{\"address_id\":\"2\",\"firstname\":\"Northwest Missouri\",\"lastname\":\"University\",\"company\":\"\",\"address_1\":\"NORTHWEST MISSOURI STATE UNIVERSITY\",\"address_2\":\"800 university drive\",\"postcode\":\"64468\",\"city\":\"Maryville\",\"zone_id\":\"3648\",\"zone\":\"Missouri\",\"zone_code\":\"MO\",\"country_id\":\"223\",\"country\":\"United States\",\"iso_code_2\":\"US\",\"iso_code_3\":\"USA\",\"address_format\":\"{firstname} {lastname}\\r\\n{company}\\r\\n{address_1}\\r\\n{address_2}\\r\\n{city}, {zone} {postcode}\\r\\n{country}\",\"custom_field\":null}}', '2018-04-23 07:40:42'),
 ('1a77a4c0411be91c3b15dce8d5', '{\"api_id\":\"1\"}', '2018-04-07 21:26:02'),
-('2bbac64a9fe0fa29b71554f7f7', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"compare\":[],\"user_id\":\"1\",\"user_token\":\"W5eXDpYpzfk131npKvTw3d9TdpvMFcP5\",\"wishlist\":[],\"customer_id\":\"1\",\"shipping_address\":false}', '2018-04-15 08:06:52'),
+('2bbac64a9fe0fa29b71554f7f7', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"compare\":[],\"wishlist\":[],\"customer_id\":\"1\",\"shipping_address\":false}', '2018-04-15 22:24:51'),
+('4f35db25478519febfcf83e0d1', '{\"api_id\":\"1\"}', '2018-04-23 06:37:43'),
 ('53077e9ef4d1be438fd6386307', '{\"api_id\":\"1\"}', '2018-04-07 21:26:50'),
 ('7d11d538dd02c2496f4f2f4f4b', '{\"api_id\":\"1\"}', '2018-04-15 03:49:13'),
+('83947ecd41926df8d3c782fbce', '{\"api_id\":\"1\",\"language\":\"en-gb\",\"currency\":\"USD\"}', '2018-04-23 06:38:00'),
 ('88d9bc0c270b514c7e9d581872', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"user_id\":\"1\",\"user_token\":\"ts45iggpRC0W4Bz2GYmFbtpJQA2sBpAx\"}', '2018-04-15 05:50:05'),
+('a11601ba82f87c82a632b1d2a5', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"user_id\":\"1\",\"user_token\":\"9kcx3O04FaSuSLw6TctJIbK4shJJZGSP\"}', '2018-04-17 22:59:15'),
 ('b93c42efb39701c190dde96cde', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"account\":\"guest\",\"guest\":{\"customer_group_id\":\"1\",\"firstname\":\"nithesh\",\"lastname\":\"k s\",\"email\":\"kishan.ks91411@gmail.com\",\"telephone\":\"6605280396\",\"custom_field\":[],\"shipping_address\":\"1\"},\"payment_address\":{\"firstname\":\"nithesh\",\"lastname\":\"k s\",\"company\":\"1995\",\"address_1\":\"1115 North College Drive\",\"address_2\":\"Apt. 87\",\"postcode\":\"64468\",\"city\":\"Maryville\",\"country_id\":\"216\",\"zone_id\":\"3398\",\"country\":\"Turkmenistan\",\"iso_code_2\":\"TM\",\"iso_code_3\":\"TKM\",\"address_format\":\"\",\"custom_field\":[],\"zone\":\"Dashhowuz Welayaty\",\"zone_code\":\"D\"},\"shipping_address\":{\"firstname\":\"nithesh\",\"lastname\":\"k s\",\"company\":\"1995\",\"address_1\":\"1115 North College Drive\",\"address_2\":\"Apt. 87\",\"postcode\":\"64468\",\"city\":\"Maryville\",\"country_id\":\"216\",\"zone_id\":\"3398\",\"country\":\"Turkmenistan\",\"iso_code_2\":\"TM\",\"iso_code_3\":\"TKM\",\"address_format\":\"\",\"zone\":\"Dashhowuz Welayaty\",\"zone_code\":\"D\",\"custom_field\":[]},\"comment\":\"\",\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"Cash On Delivery\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\",\"title\":\"Cash On Delivery\",\"terms\":\"\",\"sort_order\":\"5\"},\"order_id\":1,\"vouchers\":[]}', '2018-04-07 21:29:37'),
+('bfb12b5b13ce0a3bef7c989cf6', '{\"api_id\":\"1\"}', '2018-04-23 06:35:20'),
 ('ecebc753c2b734e55fe66decb3', '{\"api_id\":\"1\",\"language\":\"en-gb\",\"currency\":\"USD\"}', '2018-04-07 21:27:09'),
+('f19ed0706379391f78fcb35bf4', '{\"api_id\":\"1\"}', '2018-04-23 06:38:11'),
 ('fa35eeb537119839ba7487d13a', '{\"api_id\":\"1\",\"language\":\"en-gb\",\"currency\":\"USD\"}', '2018-04-15 03:49:13');
 
 -- --------------------------------------------------------
@@ -2608,69 +2701,51 @@ CREATE TABLE `oc_setting` (
 --
 
 INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `serialized`) VALUES
-(279, 0, 'config', 'config_compression', '0', 0),
-(280, 0, 'config', 'config_secure', '0', 0),
-(281, 0, 'config', 'config_password', '1', 0),
-(282, 0, 'config', 'config_shared', '0', 0),
-(283, 0, 'config', 'config_encryption', '8bKQwSgmucTPncoH468cBIvd3PNXu7iraI03ZGOdjZQouHOrgbAvvUpg0tKwTpE4v8iCSWNwfbvGvazc4vG0A2OhIwewMWTLZY8CQCt7aCvPCqtlJL7AgREAOUCbMAK1GbxeIRPuX98iuNvjTaJeiCXmormf0Vbekfy74OUXcm0nN6OR5TFswlsdxfQ2Mb9b3dREL81Irwbo0IV2gMENpLwzECMpOxaX3SjG3LaCXI78DAropOGEZZreQDi9CjyKoBEL8aIgg8QRiF0Dl9W0QxMZzULDuTgahKty6XgoISgbB88LlctLv3WSjnHKE1i9MzhxsxdNM74iooWdG9ZiorrlSjAbk8W8c8XxrjtAUZcOthn3C7SBuLrKGJ0yDRkagb8hffIRxMD5ud7ke543fOOzOBcrbfc3QdOv6JN2vrQuFciPTKvZtrBkznIhGj5N9HhUlh6EibHt6yiHpaPUXhzkzX0ZbNxptE1idVy8WPbogPD8Db103e3yYoU9ZhLE5E3KToGw0jO9GN9UxYqVEJHnMKUzMvbqh3X1GncQ2vj7vzwiEgvFbbmYYBRxuDiC6gk9tPiPEqYdZqzUEQZCzVepG7jRduc27PJqj8MRCIMV7DYs3UhQtHyzYannd8F8V8WQnRwqWX5AjTMbzU9IJLqqvlHqdRPSdjpj0xRnbHfkNFbv5jb7h8932pAlclhWZTKqXF2equuFB6JSuOLs3uQg2ombv4ix5QtxwFpZSQM83bD6ZceExzbKHOWyBhFbU3Wa6cjBjXlQlwgMbiLgibPbamUKHXe70U2GL3PQYYOc7BaQ3ejSIHzMUWF5E6k5oTjUooOxZ2eZrySIm9HaHRoEybAfd7IiKnFoyGdeebLgPZAQl8Ql6fBj2phPtUBdftelt7UtiX8dtluquyIN0M7e25v17GPFVetbUM1Y5B0XQlemhk6qfFM80nVUK25ubbQ0My12Jby1iI0lb5izVYPWavNlX0QjhrHFVxoWzGtmGwFwujAD9CMs2XGYoD1t', 0),
+(640, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(646, 0, 'config', 'config_file_max_size', '300000', 0),
+(647, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
+(648, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
+(649, 0, 'config', 'config_error_display', '1', 0),
+(650, 0, 'config', 'config_error_log', '1', 0),
+(651, 0, 'config', 'config_error_filename', 'error.log', 0),
+(644, 0, 'config', 'config_shared', '0', 0),
+(645, 0, 'config', 'config_encryption', '8bKQwSgmucTPncoH468cBIvd3PNXu7iraI03ZGOdjZQouHOrgbAvvUpg0tKwTpE4v8iCSWNwfbvGvazc4vG0A2OhIwewMWTLZY8CQCt7aCvPCqtlJL7AgREAOUCbMAK1GbxeIRPuX98iuNvjTaJeiCXmormf0Vbekfy74OUXcm0nN6OR5TFswlsdxfQ2Mb9b3dREL81Irwbo0IV2gMENpLwzECMpOxaX3SjG3LaCXI78DAropOGEZZreQDi9CjyKoBEL8aIgg8QRiF0Dl9W0QxMZzULDuTgahKty6XgoISgbB88LlctLv3WSjnHKE1i9MzhxsxdNM74iooWdG9ZiorrlSjAbk8W8c8XxrjtAUZcOthn3C7SBuLrKGJ0yDRkagb8hffIRxMD5ud7ke543fOOzOBcrbfc3QdOv6JN2vrQuFciPTKvZtrBkznIhGj5N9HhUlh6EibHt6yiHpaPUXhzkzX0ZbNxptE1idVy8WPbogPD8Db103e3yYoU9ZhLE5E3KToGw0jO9GN9UxYqVEJHnMKUzMvbqh3X1GncQ2vj7vzwiEgvFbbmYYBRxuDiC6gk9tPiPEqYdZqzUEQZCzVepG7jRduc27PJqj8MRCIMV7DYs3UhQtHyzYannd8F8V8WQnRwqWX5AjTMbzU9IJLqqvlHqdRPSdjpj0xRnbHfkNFbv5jb7h8932pAlclhWZTKqXF2equuFB6JSuOLs3uQg2ombv4ix5QtxwFpZSQM83bD6ZceExzbKHOWyBhFbU3Wa6cjBjXlQlwgMbiLgibPbamUKHXe70U2GL3PQYYOc7BaQ3ejSIHzMUWF5E6k5oTjUooOxZ2eZrySIm9HaHRoEybAfd7IiKnFoyGdeebLgPZAQl8Ql6fBj2phPtUBdftelt7UtiX8dtluquyIN0M7e25v17GPFVetbUM1Y5B0XQlemhk6qfFM80nVUK25ubbQ0My12Jby1iI0lb5izVYPWavNlX0QjhrHFVxoWzGtmGwFwujAD9CMs2XGYoD1t', 0),
 (4, 0, 'voucher', 'total_voucher_sort_order', '8', 0),
 (5, 0, 'voucher', 'total_voucher_status', '1', 0),
-(278, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(277, 0, 'config', 'config_seo_url', '0', 0),
-(276, 0, 'config', 'config_maintenance', '0', 0),
-(275, 0, 'config', 'config_mail_alert_email', '', 0),
-(274, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
-(273, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(272, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(271, 0, 'config', 'config_mail_smtp_password', '', 0),
-(270, 0, 'config', 'config_mail_smtp_username', '', 0),
-(269, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(268, 0, 'config', 'config_mail_parameter', '', 0),
-(267, 0, 'config', 'config_mail_engine', 'mail', 0),
-(266, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
-(265, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
-(264, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
-(263, 0, 'config', 'config_captcha', '', 0),
-(262, 0, 'config', 'config_return_status_id', '2', 0),
-(261, 0, 'config', 'config_return_id', '0', 0),
-(260, 0, 'config', 'config_affiliate_id', '4', 0),
-(259, 0, 'config', 'config_affiliate_commission', '5', 0),
-(258, 0, 'config', 'config_affiliate_auto', '0', 0),
-(257, 0, 'config', 'config_affiliate_approval', '0', 0),
-(256, 0, 'config', 'config_affiliate_group_id', '1', 0),
-(255, 0, 'config', 'config_stock_checkout', '0', 0),
-(254, 0, 'config', 'config_stock_warning', '0', 0),
-(253, 0, 'config', 'config_stock_display', '0', 0),
-(252, 0, 'config', 'config_api_id', '1', 0),
-(251, 0, 'config', 'config_fraud_status_id', '7', 0),
-(250, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
-(249, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
-(248, 0, 'config', 'config_order_status_id', '1', 0),
-(247, 0, 'config', 'config_checkout_id', '5', 0),
-(246, 0, 'config', 'config_checkout_guest', '1', 0),
-(243, 0, 'config', 'config_account_id', '3', 0),
-(244, 0, 'config', 'config_invoice_prefix', 'INV-2018-00', 0),
-(245, 0, 'config', 'config_cart_weight', '1', 0),
-(233, 0, 'config', 'config_tax', '1', 0),
-(234, 0, 'config', 'config_tax_default', 'shipping', 0),
-(235, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(236, 0, 'config', 'config_customer_online', '0', 0),
-(237, 0, 'config', 'config_customer_activity', '0', 0),
-(238, 0, 'config', 'config_customer_search', '0', 0),
-(239, 0, 'config', 'config_customer_group_id', '1', 0),
-(240, 0, 'config', 'config_customer_group_display', '[\"1\"]', 1),
-(241, 0, 'config', 'config_customer_price', '0', 0),
-(242, 0, 'config', 'config_login_attempts', '5', 0),
-(232, 0, 'config', 'config_voucher_max', '1000', 0),
-(231, 0, 'config', 'config_voucher_min', '1', 0),
-(211, 0, 'config', 'config_address', '800 University Dr, Maryville, MO 64468', 0),
-(210, 0, 'config', 'config_owner', 'Student', 0),
-(209, 0, 'config', 'config_name', 'KK Fashions', 0),
-(208, 0, 'config', 'config_layout_id', '4', 0),
-(207, 0, 'config', 'config_theme', 'default', 0),
-(206, 0, 'config', 'config_meta_keyword', 'KK Fashions is an Indian fashion e-commerce company headquartered in USA.', 0),
-(205, 0, 'config', 'config_meta_description', 'Online Shopping Site for Fashion &amp; Lifestyle in India. Buy Shoes, Clothing, Accessories and lifestyle products for women &amp; men.', 0),
-(204, 0, 'config', 'config_meta_title', 'KK Fashions', 0),
+(641, 0, 'config', 'config_compression', '0', 0),
+(642, 0, 'config', 'config_secure', '0', 0),
+(643, 0, 'config', 'config_password', '1', 0),
+(639, 0, 'config', 'config_seo_url', '0', 0),
+(638, 0, 'config', 'config_maintenance', '0', 0),
+(637, 0, 'config', 'config_mail_alert_email', '', 0),
+(636, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
+(635, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(634, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(633, 0, 'config', 'config_mail_smtp_password', '', 0),
+(632, 0, 'config', 'config_mail_smtp_username', '', 0),
+(631, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(630, 0, 'config', 'config_mail_parameter', '', 0),
+(629, 0, 'config', 'config_mail_engine', 'mail', 0),
+(625, 0, 'config', 'config_captcha', '', 0),
+(626, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
+(627, 0, 'config', 'config_logo', '', 0),
+(628, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
+(624, 0, 'config', 'config_return_status_id', '2', 0),
+(623, 0, 'config', 'config_return_id', '0', 0),
+(622, 0, 'config', 'config_affiliate_id', '4', 0),
+(621, 0, 'config', 'config_affiliate_commission', '5', 0),
+(620, 0, 'config', 'config_affiliate_auto', '0', 0),
+(619, 0, 'config', 'config_affiliate_approval', '0', 0),
+(618, 0, 'config', 'config_affiliate_group_id', '1', 0),
+(617, 0, 'config', 'config_stock_checkout', '0', 0),
+(616, 0, 'config', 'config_stock_warning', '0', 0),
+(615, 0, 'config', 'config_stock_display', '0', 0),
+(614, 0, 'config', 'config_api_id', '1', 0),
+(613, 0, 'config', 'config_fraud_status_id', '7', 0),
+(612, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
+(611, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
+(610, 0, 'config', 'config_order_status_id', '1', 0),
+(609, 0, 'config', 'config_checkout_id', '5', 0),
 (95, 0, 'payment_free_checkout', 'payment_free_checkout_status', '1', 0),
 (96, 0, 'payment_free_checkout', 'free_checkout_order_status_id', '1', 0),
 (97, 0, 'payment_free_checkout', 'payment_free_checkout_sort_order', '1', 0),
@@ -2777,31 +2852,47 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (198, 0, 'report_marketing', 'report_marketing_sort_order', '12', 0),
 (199, 0, 'developer', 'developer_theme', '1', 0),
 (200, 0, 'developer', 'developer_sass', '1', 0),
-(212, 0, 'config', 'config_geocode', '', 0),
-(213, 0, 'config', 'config_email', 'admin@gmail.com', 0),
-(214, 0, 'config', 'config_telephone', '123456789', 0),
-(215, 0, 'config', 'config_fax', '', 0),
-(216, 0, 'config', 'config_image', '', 0),
-(217, 0, 'config', 'config_open', '', 0),
-(218, 0, 'config', 'config_comment', '', 0),
-(219, 0, 'config', 'config_country_id', '223', 0),
-(220, 0, 'config', 'config_zone_id', '3648', 0),
-(221, 0, 'config', 'config_language', 'en-gb', 0),
-(222, 0, 'config', 'config_admin_language', 'en-gb', 0),
-(223, 0, 'config', 'config_currency', 'USD', 0),
-(224, 0, 'config', 'config_currency_auto', '1', 0),
-(225, 0, 'config', 'config_length_class_id', '1', 0),
-(226, 0, 'config', 'config_weight_class_id', '1', 0),
-(227, 0, 'config', 'config_product_count', '1', 0),
-(228, 0, 'config', 'config_limit_admin', '20', 0),
-(229, 0, 'config', 'config_review_status', '1', 0),
-(230, 0, 'config', 'config_review_guest', '1', 0),
-(284, 0, 'config', 'config_file_max_size', '300000', 0),
-(285, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
-(286, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
-(287, 0, 'config', 'config_error_display', '1', 0),
-(288, 0, 'config', 'config_error_log', '1', 0),
-(289, 0, 'config', 'config_error_filename', 'error.log', 0),
+(608, 0, 'config', 'config_checkout_guest', '1', 0),
+(607, 0, 'config', 'config_cart_weight', '1', 0),
+(606, 0, 'config', 'config_invoice_prefix', 'INV-2018-00', 0),
+(605, 0, 'config', 'config_account_id', '3', 0),
+(604, 0, 'config', 'config_login_attempts', '5', 0),
+(603, 0, 'config', 'config_customer_price', '0', 0),
+(602, 0, 'config', 'config_customer_group_display', '[\"1\"]', 1),
+(601, 0, 'config', 'config_customer_group_id', '1', 0),
+(600, 0, 'config', 'config_customer_search', '0', 0),
+(599, 0, 'config', 'config_customer_activity', '0', 0),
+(598, 0, 'config', 'config_customer_online', '0', 0),
+(597, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(596, 0, 'config', 'config_tax_default', 'shipping', 0),
+(595, 0, 'config', 'config_tax', '1', 0),
+(594, 0, 'config', 'config_voucher_max', '1000', 0),
+(593, 0, 'config', 'config_voucher_min', '1', 0),
+(592, 0, 'config', 'config_review_guest', '1', 0),
+(591, 0, 'config', 'config_review_status', '1', 0),
+(590, 0, 'config', 'config_limit_admin', '20', 0),
+(589, 0, 'config', 'config_product_count', '1', 0),
+(588, 0, 'config', 'config_weight_class_id', '1', 0),
+(587, 0, 'config', 'config_length_class_id', '1', 0),
+(586, 0, 'config', 'config_currency_auto', '1', 0),
+(585, 0, 'config', 'config_currency', 'USD', 0),
+(584, 0, 'config', 'config_admin_language', 'en-gb', 0),
+(583, 0, 'config', 'config_language', 'en-gb', 0),
+(582, 0, 'config', 'config_zone_id', '3648', 0),
+(581, 0, 'config', 'config_country_id', '223', 0),
+(580, 0, 'config', 'config_comment', '', 0),
+(579, 0, 'config', 'config_open', '', 0),
+(577, 0, 'config', 'config_fax', '', 0),
+(578, 0, 'config', 'config_image', '', 0),
+(576, 0, 'config', 'config_telephone', '123456789', 0),
+(573, 0, 'config', 'config_address', '800 University Dr, Maryville, MO 64468', 0),
+(574, 0, 'config', 'config_geocode', '', 0),
+(575, 0, 'config', 'config_email', 'admin@gmail.com', 0),
+(571, 0, 'config', 'config_name', 'KK Fashions', 0),
+(572, 0, 'config', 'config_owner', 'Student', 0),
+(570, 0, 'config', 'config_layout_id', '4', 0),
+(569, 0, 'config', 'config_theme', 'default', 0),
+(568, 0, 'config', 'config_meta_keyword', 'KK Fashions is an Indian fashion e-commerce company headquartered in USA.', 0),
 (290, 0, 'payment_pp_standard', 'payment_pp_standard_email', 'S530468@nwmissouri.edu', 0),
 (291, 0, 'payment_pp_standard', 'payment_pp_standard_test', '0', 0),
 (292, 0, 'payment_pp_standard', 'payment_pp_standard_debug', '0', 0),
@@ -2819,7 +2910,9 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (304, 0, 'payment_pp_standard', 'payment_pp_standard_processed_status_id', '7', 0),
 (305, 0, 'payment_pp_standard', 'payment_pp_standard_refunded_status_id', '7', 0),
 (306, 0, 'payment_pp_standard', 'payment_pp_standard_reversed_status_id', '7', 0),
-(307, 0, 'payment_pp_standard', 'payment_pp_standard_voided_status_id', '7', 0);
+(307, 0, 'payment_pp_standard', 'payment_pp_standard_voided_status_id', '7', 0),
+(567, 0, 'config', 'config_meta_description', 'Online Shopping Site for Fashion &amp; Lifestyle in India. Buy Shoes, Clothing, Accessories and lifestyle products for women &amp; men.', 0),
+(566, 0, 'config', 'config_meta_title', 'KK Fashions', 0);
 
 -- --------------------------------------------------------
 
@@ -2863,7 +2956,7 @@ CREATE TABLE `oc_statistics` (
 --
 
 INSERT INTO `oc_statistics` (`statistics_id`, `code`, `value`) VALUES
-(1, 'order_sale', '85.0000'),
+(1, 'order_sale', '165.0000'),
 (2, 'order_processing', '0.0000'),
 (3, 'order_complete', '0.0000'),
 (4, 'order_other', '0.0000'),
@@ -3067,7 +3160,7 @@ CREATE TABLE `oc_user` (
 --
 
 INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `image`, `code`, `ip`, `status`, `date_added`) VALUES
-(1, 1, 'admin', '694f5a6f798a0f7e5a8530b8ea2e1e56010c58f9', 'weNtUOL5D', 'Kishan', 'K S', 'admin@gmail.com', '', '', '::1', 1, '2018-04-06 22:46:54'),
+(1, 1, 'admin', '694f5a6f798a0f7e5a8530b8ea2e1e56010c58f9', 'weNtUOL5D', 'admin', 'admin', 'admin@gmail.com', '', '', '::1', 1, '2018-04-06 22:46:54'),
 (2, 10, 'Seller', 'a76ae5a7dad6623c89126b2efd75ed8194bf87d0', 'URZaWwgeq', 'Seller', 'John', 'Seller@nwmsu.edu', '', '', '::1', 1, '2018-04-15 01:59:42');
 
 -- --------------------------------------------------------
@@ -8287,7 +8380,7 @@ ALTER TABLE `oc_zone_to_geo_zone`
 -- AUTO_INCREMENT for table `oc_address`
 --
 ALTER TABLE `oc_address`
-  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `oc_api`
@@ -8305,7 +8398,7 @@ ALTER TABLE `oc_api_ip`
 -- AUTO_INCREMENT for table `oc_api_session`
 --
 ALTER TABLE `oc_api_session`
-  MODIFY `api_session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `api_session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `oc_attribute`
@@ -8335,13 +8428,13 @@ ALTER TABLE `oc_banner_image`
 -- AUTO_INCREMENT for table `oc_cart`
 --
 ALTER TABLE `oc_cart`
-  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `oc_category`
 --
 ALTER TABLE `oc_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `oc_country`
@@ -8377,7 +8470,7 @@ ALTER TABLE `oc_currency`
 -- AUTO_INCREMENT for table `oc_customer`
 --
 ALTER TABLE `oc_customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `oc_customer_activity`
@@ -8407,13 +8500,13 @@ ALTER TABLE `oc_customer_history`
 -- AUTO_INCREMENT for table `oc_customer_ip`
 --
 ALTER TABLE `oc_customer_ip`
-  MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `oc_customer_login`
 --
 ALTER TABLE `oc_customer_login`
-  MODIFY `customer_login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `customer_login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `oc_customer_reward`
@@ -8575,13 +8668,13 @@ ALTER TABLE `oc_option_value`
 -- AUTO_INCREMENT for table `oc_order`
 --
 ALTER TABLE `oc_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `oc_order_history`
 --
 ALTER TABLE `oc_order_history`
-  MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `oc_order_option`
@@ -8593,7 +8686,7 @@ ALTER TABLE `oc_order_option`
 -- AUTO_INCREMENT for table `oc_order_product`
 --
 ALTER TABLE `oc_order_product`
-  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `oc_order_recurring`
@@ -8623,7 +8716,7 @@ ALTER TABLE `oc_order_status`
 -- AUTO_INCREMENT for table `oc_order_total`
 --
 ALTER TABLE `oc_order_total`
-  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `oc_order_voucher`
@@ -8635,7 +8728,7 @@ ALTER TABLE `oc_order_voucher`
 -- AUTO_INCREMENT for table `oc_product`
 --
 ALTER TABLE `oc_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `oc_product_discount`
@@ -8647,7 +8740,7 @@ ALTER TABLE `oc_product_discount`
 -- AUTO_INCREMENT for table `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
-  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2430;
+  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2440;
 
 --
 -- AUTO_INCREMENT for table `oc_product_option`
@@ -8725,7 +8818,7 @@ ALTER TABLE `oc_seo_url`
 -- AUTO_INCREMENT for table `oc_setting`
 --
 ALTER TABLE `oc_setting`
-  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=308;
+  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=652;
 
 --
 -- AUTO_INCREMENT for table `oc_statistics`
