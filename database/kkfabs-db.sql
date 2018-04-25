@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2018 at 09:17 AM
+-- Generation Time: Apr 26, 2018 at 01:51 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -240,6 +240,13 @@ CREATE TABLE `oc_cart` (
   `quantity` int(5) NOT NULL,
   `date_added` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `oc_cart`
+--
+
+INSERT INTO `oc_cart` (`cart_id`, `api_id`, `customer_id`, `session_id`, `product_id`, `recurring_id`, `option`, `quantity`, `date_added`) VALUES
+(4, 0, 2, '195c30d19c3b3f1bd859a71d74', 51, 0, '[]', 1, '2018-04-23 11:06:41');
 
 -- --------------------------------------------------------
 
@@ -765,7 +772,7 @@ CREATE TABLE `oc_currency` (
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 (1, 'Pound Sterling', 'GBP', '£', '', '2', 0.61250001, 1, '2014-09-25 14:40:00'),
-(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2018-04-23 06:55:43'),
+(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2018-04-25 17:11:29'),
 (3, 'Euro', 'EUR', '', '€', '2', 0.78460002, 1, '2014-09-25 14:40:00');
 
 -- --------------------------------------------------------
@@ -1905,7 +1912,9 @@ CREATE TABLE `oc_order` (
 --
 
 INSERT INTO `oc_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `custom_field`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_custom_field`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_custom_field`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `marketing_id`, `tracking`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
-(2, 1, 'INV-2018-00', 0, 'KK Fashions', 'http://localhost:8080/open-cart-test/upload/', 2, 1, 'Kishan', 'Kalburgi', 'kk@gmail.com', '1234567890', '', '', 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 'United States', 223, 'Missouri', 3648, '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city}, {zone} {postcode}\r\n{country}', '[]', 'Cash On Delivery', 'cod', 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 'United States', 223, 'Missouri', 3648, '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city}, {zone} {postcode}\r\n{country}', '[]', 'Flat Shipping Rate', 'flat.flat', '', '40.0000', 1, 0, '0.0000', 0, '', 1, 2, 'USD', '1.00000000', '::1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', 'en-US,en;q=0.9', '2018-04-23 01:10:35', '2018-04-23 01:10:51');
+(2, 1, 'INV-2018-00', 0, 'KK Fashions', 'http://localhost:8080/open-cart-test/upload/', 2, 1, 'Kishan', 'Kalburgi', 'kk@gmail.com', '1234567890', '', '', 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 'United States', 223, 'Missouri', 3648, '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city}, {zone} {postcode}\r\n{country}', '[]', 'Cash On Delivery', 'cod', 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 'United States', 223, 'Missouri', 3648, '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city}, {zone} {postcode}\r\n{country}', '[]', 'Flat Shipping Rate', 'flat.flat', '', '40.0000', 1, 0, '0.0000', 0, '', 1, 2, 'USD', '1.00000000', '::1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', 'en-US,en;q=0.9', '2018-04-23 01:10:35', '2018-04-23 01:10:51'),
+(3, 0, 'INV-2018-00', 0, 'KK Fashions', 'http://localhost:8080/open-cart-test/upload/', 2, 1, 'Bob', 'Kenny', 'kk@gmail.com', '1234567890', '', '[]', 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 'United States', 223, 'Missouri', 3648, '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city}, {zone} {postcode}\r\n{country}', '[]', 'Cash On Delivery', 'cod', 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 'United States', 223, 'Missouri', 3648, '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city}, {zone} {postcode}\r\n{country}', '[]', 'Flat Shipping Rate', 'flat.flat', '', '40.0000', 1, 0, '0.0000', 0, '', 1, 2, 'USD', '1.00000000', '::1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', 'en-US,en;q=0.9', '2018-04-23 10:57:12', '2018-04-23 10:57:18'),
+(4, 0, 'INV-2018-00', 0, 'KK Fashions', 'http://localhost:8080/open-cart-test/upload/', 2, 1, 'Bob', 'Kenny', 'kk@gmail.com', '1234567890', '', '[]', 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 'United States', 223, 'Missouri', 3648, '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city}, {zone} {postcode}\r\n{country}', '[]', 'Cash On Delivery', 'cod', 'Northwest Missouri', 'University', '', 'NORTHWEST MISSOURI STATE UNIVERSITY', '800 university drive', 'Maryville', '64468', 'United States', 223, 'Missouri', 3648, '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city}, {zone} {postcode}\r\n{country}', '[]', 'Flat Shipping Rate', 'flat.flat', '', '40.0000', 0, 0, '0.0000', 0, '', 1, 2, 'USD', '1.00000000', '::1', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', 'en-US,en;q=0.9', '2018-04-23 11:06:58', '2018-04-23 11:06:58');
 
 -- --------------------------------------------------------
 
@@ -1928,7 +1937,9 @@ CREATE TABLE `oc_order_history` (
 
 INSERT INTO `oc_order_history` (`order_history_id`, `order_id`, `order_status_id`, `notify`, `comment`, `date_added`) VALUES
 (3, 2, 1, 0, '', '2018-04-23 01:10:46'),
-(4, 2, 1, 0, '', '2018-04-23 01:10:51');
+(4, 2, 1, 0, '', '2018-04-23 01:10:51'),
+(5, 3, 1, 0, '', '2018-04-23 10:57:16'),
+(6, 3, 1, 0, '', '2018-04-23 10:57:18');
 
 -- --------------------------------------------------------
 
@@ -1971,7 +1982,9 @@ CREATE TABLE `oc_order_product` (
 --
 
 INSERT INTO `oc_order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
-(2, 2, 51, 'Duke Stardust Men Printed Pack of 3 Round Neck T-Shirts', 'a200', 1, '35.0000', '35.0000', '0.0000', 0);
+(2, 2, 51, 'Duke Stardust Men Printed Pack of 3 Round Neck T-Shirts', 'a200', 1, '35.0000', '35.0000', '0.0000', 0),
+(3, 3, 51, 'Duke Stardust Men Printed Pack of 3 Round Neck T-Shirts', 'a200', 1, '35.0000', '35.0000', '0.0000', 0),
+(4, 4, 51, 'Duke Stardust Men Printed Pack of 3 Round Neck T-Shirts', 'a200', 1, '35.0000', '35.0000', '0.0000', 0);
 
 -- --------------------------------------------------------
 
@@ -2085,7 +2098,13 @@ CREATE TABLE `oc_order_total` (
 INSERT INTO `oc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `value`, `sort_order`) VALUES
 (5, 2, 'shipping', 'Flat Shipping Rate', '5.0000', 3),
 (4, 2, 'sub_total', 'Sub-Total', '35.0000', 1),
-(6, 2, 'total', 'Total', '40.0000', 9);
+(6, 2, 'total', 'Total', '40.0000', 9),
+(7, 3, 'sub_total', 'Sub-Total', '35.0000', 1),
+(8, 3, 'shipping', 'Flat Shipping Rate', '5.0000', 3),
+(9, 3, 'total', 'Total', '40.0000', 9),
+(10, 4, 'sub_total', 'Sub-Total', '35.0000', 1),
+(11, 4, 'shipping', 'Flat Shipping Rate', '5.0000', 3),
+(12, 4, 'total', 'Total', '40.0000', 9);
 
 -- --------------------------------------------------------
 
@@ -2153,14 +2172,21 @@ CREATE TABLE `oc_product` (
 --
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
+(66, 'a9000', '', '', '', '', '', '', '', 33, 6, 'catalog/Products/Men-p/8000/8.jpg', 14, 1, '19.0000', 0, 0, '2018-04-23', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-25 12:45:55', '2018-04-25 12:55:01'),
+(62, 'a600', '', '', '', '', '', '', '', 99, 6, 'catalog/Products/Women-p/6000/4.jpg', 14, 1, '49.0000', 0, 0, '2018-04-23', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-25 12:21:17', '2018-04-25 12:55:55'),
+(63, 'a700', '', '', '', '', '', '', '', 20, 6, 'catalog/Products/Men-p/5000/5.jpg', 11, 1, '29.0000', 0, 0, '2018-04-23', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-25 12:27:55', '2018-04-25 12:27:55'),
+(64, 'a7000', '', '', '', '', '', '', '', 170, 6, 'catalog/Products/Men-p/6000/6.jpg', 14, 1, '45.0000', 0, 0, '2018-04-23', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-25 12:31:25', '2018-04-25 12:55:36'),
+(65, 'a8000', '', '', '', '', '', '', '', 111, 6, 'catalog/Products/Men-p/7000/7.jpg', 15, 1, '69.0000', 0, 0, '2018-04-23', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-25 12:39:22', '2018-04-25 12:56:49'),
 (54, 'a400', '004', '', '', '', '', '', '', 150, 6, 'catalog/Products/Women-p/2000/11511761044699-AKS-Women-Cream-Coloured--Maroon-Printed-Kurta-with-Palazzos-51511761044673-4.jpg', 0, 1, '60.0000', 0, 0, '2018-04-13', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, '2018-04-15 00:55:50', '2018-04-15 01:44:55'),
-(55, 'a500', '005', '', '', '', '', '', '', 100, 6, 'catalog/Products/Accessories-p/1000/BD-NEW-RGB-WEB-1.1_1b3f3cb6-37b5-4b27-9f77-eb0ee0cc7d56_1024x1024.jpg', 0, 1, '69.0000', 0, 0, '2018-04-13', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-15 01:43:08', '2018-04-15 02:38:35'),
+(55, 'a500', '005', '', '', '', '', '', '', 100, 6, 'catalog/Products/Accessories-p/1000/BD-NEW-RGB-WEB-1.1_1b3f3cb6-37b5-4b27-9f77-eb0ee0cc7d56_1024x1024.jpg', 0, 1, '69.0000', 0, 0, '2018-04-13', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, '2018-04-15 01:43:08', '2018-04-15 02:38:35'),
 (56, 'a600', '006', '', '', '', '', '', '', 100, 6, 'catalog/Products/Accessories-p/2000/ADJ-RGB-IMAGE-1.jpg', 0, 1, '35.0000', 0, 0, '2018-04-15', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-15 01:44:38', '2018-04-15 02:38:48'),
-(57, 'a1000', '', '', '', '', '', '', '', 100, 6, 'catalog/Products/Men-p/3000/1.jpg', 13, 1, '35.0000', 0, 0, '2018-04-21', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-23 02:03:10', '2018-04-23 02:04:48'),
-(58, 'a2000', '', '', '', '', '', '', '', 200, 6, 'catalog/Products/Men-p/4000/1.jpg', 13, 1, '49.0000', 0, 0, '2018-04-21', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-23 02:07:50', '2018-04-23 02:07:50'),
+(57, 'a1000', '', '', '', '', '', '', '', 100, 6, 'catalog/Products/Men-p/3000/1.jpg', 13, 1, '35.0000', 0, 0, '2018-04-21', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, '2018-04-23 02:03:10', '2018-04-23 02:04:48'),
+(58, 'a2000', '', '', '', '', '', '', '', 200, 6, 'catalog/Products/Men-p/4000/1.jpg', 13, 1, '49.0000', 0, 0, '2018-04-21', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-23 02:07:50', '2018-04-25 12:55:15'),
 (59, 'a3403', '', '', '', '', '', '', '', 300, 6, 'catalog/Products/Women-p/3000/1.jpg', 13, 1, '69.0000', 0, 0, '2018-04-13', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-23 02:13:44', '2018-04-23 02:16:11'),
-(50, 'a100', '001', '', '', '', '', '', '', 200, 6, 'catalog/Products/Men-p/2000/11505308293532-Puma-Men-Red-Printed-Round-Neck-T-shirt-7161505308293352-1.jpg', 16, 1, '65.0000', 0, 0, '2018-04-15', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 8, '2018-04-14 22:06:15', '2018-04-15 02:22:26'),
-(51, 'a200', '002', '', '', '', '', '', '', 199, 6, 'catalog/Products/Men-p/1000/T shirt.jpg', 12, 1, '35.0000', 0, 0, '2018-04-15', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 3, '2018-04-14 22:21:14', '2018-04-23 02:09:55'),
+(60, 'a6000', '', '', '', '', '', '', '', 200, 6, 'catalog/Products/Women-p/4000/1.jpg', 13, 1, '45.0000', 0, 0, '2018-04-23', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-25 12:03:22', '2018-04-25 12:03:22'),
+(61, 'a510', '', '', '', '', '', '', '', 120, 6, 'catalog/Products/Women-p/5000/3.jpg', 14, 1, '39.0000', 0, 0, '2018-04-23', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-25 12:11:12', '2018-04-25 12:22:11'),
+(50, 'a100', '001', '', '', '', '', '', '', 200, 6, 'catalog/Products/Men-p/2000/11505308293532-Puma-Men-Red-Printed-Round-Neck-T-shirt-7161505308293352-1.jpg', 16, 1, '65.0000', 0, 0, '2018-04-15', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 8, '2018-04-14 22:06:15', '2018-04-25 12:55:47'),
+(51, 'a200', '002', '', '', '', '', '', '', 198, 6, 'catalog/Products/Men-p/1000/T shirt.jpg', 12, 1, '35.0000', 0, 0, '2018-04-15', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 5, '2018-04-14 22:21:14', '2018-04-23 02:09:55'),
 (53, 'a300', '003', '', '', '', '', '', '', 200, 6, 'catalog/Products/Women-p/1000/11519378307445-AKS-Women-Navy--Off-White-Printed-Straight-Kurta-9971519378307264-3.jpg', 0, 1, '55.0000', 0, 0, '2018-04-13', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2018-04-15 00:53:21', '2018-04-15 01:45:08');
 
 -- --------------------------------------------------------
@@ -2198,6 +2224,8 @@ CREATE TABLE `oc_product_description` (
 --
 
 INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
+(65, 1, 'INVICTUS Men Orange &amp; White Linen Slim Fit Checked Formal Shirt', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Orange and white checked shirt, has a spread collar, button placket, long sleeves, curved hem&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;Material &amp;amp; Care&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;100% linen&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Machine-wash&lt;/p&gt;&lt;/div&gt;', '', 'Checked Formal Shirt', '', ''),
+(66, 1, 'Difference of Opinion Men Grey Printed Round Neck T-Shirt', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Grey printed waist length T-shirt, has a round neck, long sleeves&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;Material &amp;amp; Care&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Cotton&amp;nbsp;&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Machine-wash&lt;/p&gt;&lt;/div&gt;', '', 'Round Neck T-Shirt', '', ''),
 (50, 1, 'Puma Men Red Printed Graphic S/S T-shirt', '&lt;p&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Red printed T-shirt with DRY-Cell technology and reflective detail, has a round neck, short sleeves&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;h2 style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Material &amp;amp; Care&lt;/b&gt;&lt;/span&gt;&lt;/h2&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px; font-family: Whitney;&quot;&gt;100% polyester&amp;nbsp;&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Machine-wash&lt;br&gt;&lt;/p&gt;', '', 'T-Shirts', '', ''),
 (51, 1, 'Duke Stardust Men Printed Pack of 3 Round Neck T-Shirts', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Pack of three printed waist-length T-shirts in coral pink, grey melange and green&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Each has a round neck and short sleeves&lt;br style=&quot;box-sizing: inherit;&quot;&gt;&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Material &amp;amp; Care&lt;/b&gt;&lt;/span&gt;&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Cotton&amp;nbsp;&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Machine-wash cold&lt;/p&gt;&lt;/div&gt;', '', 'T-Shirts', '', ''),
 (53, 1, 'AKS Women Navy &amp; Off-White Printed Straight Kurta', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Navy and off-white printed straight&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/kurta?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;kurta&lt;/a&gt;, has a shirt collar, three-quarter sleeves, a full button placket, straight hem, multiple slits&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Material &amp;amp; Care&lt;/b&gt;&lt;/span&gt;&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Cotton&amp;nbsp;&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Machine-wash&lt;/p&gt;&lt;/div&gt;', '', 'Kurta', '', ''),
@@ -2206,7 +2234,12 @@ INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `desc
 (56, 1, 'WOVEN ADJUSTABLE SINGLE - RG&amp;B', '&lt;p&gt;&lt;i style=&quot;margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; font-size: 14px; line-height: inherit; font-family: &amp;quot;Open Sans&amp;quot;; color: rgb(73, 76, 80);&quot;&gt;This is a woven leather bracelet which features a stainless steel adjustable clasp, engraved with the signature RG&amp;amp;B logo. Available in four color ways of RoseGold &amp;amp; Black, RoseGold &amp;amp; Navy, RoseGold &amp;amp; White and All Black.&lt;/i&gt;&lt;br&gt;&lt;/p&gt;', '', 'SINGLE', '', ''),
 (57, 1, 'Highlander Blue Slim Fit Denim Shirt', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Blue lightly washed denim&amp;nbsp;shirt, has a spread collar, a full button placket, long sleeves, a chest pocket, curved hem&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Material &amp;amp; Care&lt;/b&gt;&lt;/span&gt;&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;100% cotton&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Machine-wash&lt;/p&gt;&lt;/div&gt;', '', 'Shirt', '', ''),
 (58, 1, 'Hancock Navy Slim Fit Formal Shirt', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;&lt;/p&gt;&lt;div style=&quot;box-sizing: inherit;&quot;&gt;Navy blue&amp;nbsp;formal shirt, has a spread&amp;nbsp;collar, long sleeves, a full button placket, a patch pocket, a curved hem&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Material &amp;amp; Care&lt;/b&gt;&lt;/span&gt;&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;box-sizing: inherit;&quot;&gt;Cotton and polyester&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Machine-wash&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;', '', 'Formal Shirt', '', ''),
-(59, 1, 'Anouk Women Mustard Yellow &amp; Black Printed A-line Fusion Kurta', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Mustard&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/yellow?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;yellow&lt;/a&gt;&amp;nbsp;and&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/black?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;black&lt;/a&gt;&amp;nbsp;printed A-line&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/kurta?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;kurta&lt;/a&gt;, has a mandarin collar, a&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/short?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;short&lt;/a&gt;&amp;nbsp;button placket, three-quarter roll-up sleeves, straight hem&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Material &amp;amp; Care&lt;/b&gt;&lt;/span&gt;&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;100% viscose&amp;nbsp;&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Hand-wash&lt;/p&gt;&lt;/div&gt;', '', 'Fusion Kurta', '', '');
+(59, 1, 'Anouk Women Mustard Yellow &amp; Black Printed A-line Fusion Kurta', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Mustard&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/yellow?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;yellow&lt;/a&gt;&amp;nbsp;and&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/black?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;black&lt;/a&gt;&amp;nbsp;printed A-line&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/kurta?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;kurta&lt;/a&gt;, has a mandarin collar, a&amp;nbsp;&lt;a href=&quot;https://www.myntra.com/short?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63);&quot;&gt;short&lt;/a&gt;&amp;nbsp;button placket, three-quarter roll-up sleeves, straight hem&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Material &amp;amp; Care&lt;/b&gt;&lt;/span&gt;&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;100% viscose&amp;nbsp;&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Hand-wash&lt;/p&gt;&lt;/div&gt;', '', 'Fusion Kurta', '', ''),
+(60, 1, 'Saree mall Cream-Coloured &amp; Navy Semi-Stitched Dress Material', '&lt;p&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Cream-coloured and navy blue embroidered semi-stitched dress material&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Cream-coloured and navy blue embroidered kurta fabric&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Navy blue solid bottom fabric&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Navy blue and cream-coloured printed dupatta, has printed border&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Disclaimer: Images are for referral purposes only. The actual product is semi-stitched.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', '', 'Dress Material', '', ''),
+(61, 1, 'Inddus Blue &amp; Beige Cotton Blend Unstitched Dress Material', '&lt;p&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Blue and beige woven design unstitched&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.myntra.com/dress-material?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63); font-family: Whitney; font-size: 15px;&quot;&gt;dress material&lt;/a&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Blue and beige woven design&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.myntra.com/kurta?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63); font-family: Whitney; font-size: 15px;&quot;&gt;kurta&lt;/a&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&amp;nbsp;fabric&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Blue and beige solid bottom fabric&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Blue and beige&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.myntra.com/solid-dupatta?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63); font-family: Whitney; font-size: 15px;&quot;&gt;solid dupatta&lt;/a&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;, has taping border&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Disclaimer: Images are for referral purposes only. The actual product is unstitched&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', '', ' Unstitched Dress Material', '', ''),
+(62, 1, 'AKS Women Mustard Yellow Printed Straight Kurta', '&lt;p&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Mustard&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.myntra.com/yellow?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63); font-family: Whitney; font-size: 15px;&quot;&gt;yellow&lt;/a&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&amp;nbsp;printed straight&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.myntra.com/kurta?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63); font-family: Whitney; font-size: 15px;&quot;&gt;kurta&lt;/a&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Has a notched round neck with tassel detail on the front,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Three-quarter sleeves, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;A straight hem, and side slits&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', '', 'Printed Straight Kurta', '', ''),
+(63, 1, 'Next Men Tan Solid Belt', '&lt;p&gt;&lt;a href=&quot;https://www.myntra.com/tan?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63); font-family: Whitney; font-size: 15px;&quot;&gt;Tan&lt;/a&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.myntra.com/solid?src=pd&quot; class=&quot;seolink&quot; style=&quot;box-sizing: inherit; color: rgb(40, 44, 63); font-family: Whitney; font-size: 15px;&quot;&gt;solid&lt;/a&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&amp;nbsp;belt&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Reversible: No&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Stretchable: No&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Secured with a tang closure&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Warranty: No Warranty&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Leather&amp;nbsp;&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;Wipe with a clean, dry cloth to remove dust&lt;/span&gt;&lt;span style=&quot;color: rgb(105, 110, 121); font-family: Whitney; font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', '', 'Solid Belt', '', ''),
+(64, 1, 'HERE&amp;NOW Men Red &amp; Blue Regular Fit Checked Casual Shirt', '&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;Red and blue checked casual shirt, has a spread collar, button placket, 1 pocket, long sleeves, curved hem&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Manufacturing Info: yellow orange view&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Country of Origin: India&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;box-sizing: inherit; font-family: Whitney; font-size: medium;&quot;&gt;&lt;h4 class=&quot;pdp-product-description-title&quot; style=&quot;box-sizing: inherit; color: rgb(105, 107, 121); font-size: 15px; margin-top: 15px; margin-bottom: 0px; font-family: Whitney;&quot;&gt;Material &amp;amp; Care&lt;/h4&gt;&lt;p class=&quot;pdp-product-description-content&quot; style=&quot;box-sizing: inherit; color: rgb(105, 110, 121); line-height: 1.4; font-size: 15px; margin-top: 15px;&quot;&gt;100% cotton&lt;br style=&quot;box-sizing: inherit;&quot;&gt;Machine-wash&lt;/p&gt;&lt;/div&gt;', '', 'Checked Casual Shirt', '', '');
 
 -- --------------------------------------------------------
 
@@ -2256,11 +2289,11 @@ CREATE TABLE `oc_product_image` (
 INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
 (2438, 59, 'catalog/Products/Women-p/3000/2.jpg', 0),
 (2439, 59, 'catalog/Products/Women-p/3000/3.jpg', 0),
-(2433, 58, 'catalog/Products/Men-p/4000/3.jpg', 0),
+(2440, 58, 'catalog/Products/Men-p/4000/3.jpg', 0),
+(2441, 58, 'catalog/Products/Men-p/4000/2.jpg', 0),
 (2431, 57, 'catalog/Products/Men-p/3000/3.jpg', 0),
-(2432, 58, 'catalog/Products/Men-p/4000/2.jpg', 0),
-(2429, 50, 'catalog/Products/Men-p/2000/11505308293437-Puma-Men-Red-Printed-Round-Neck-T-shirt-7161505308293352-5.jpg', 0),
-(2428, 50, 'catalog/Products/Men-p/2000/11505308293483-Puma-Men-Red-Printed-Round-Neck-T-shirt-7161505308293352-3.jpg', 0),
+(2443, 50, 'catalog/Products/Men-p/2000/11505308293483-Puma-Men-Red-Printed-Round-Neck-T-shirt-7161505308293352-3.jpg', 0),
+(2442, 50, 'catalog/Products/Men-p/2000/11505308293437-Puma-Men-Red-Printed-Round-Neck-T-shirt-7161505308293352-5.jpg', 0),
 (2430, 57, 'catalog/Products/Men-p/3000/2.jpg', 0),
 (2427, 53, 'catalog/Products/Women-p/1000/11519378307474-AKS-Women-Navy--Off-White-Printed-Straight-Kurta-9971519378307264-2.jpg', 0),
 (2426, 53, 'catalog/Products/Women-p/1000/11519378307497-AKS-Women-Navy--Off-White-Printed-Straight-Kurta-9971519378307264-1.jpg', 0),
@@ -2389,6 +2422,7 @@ CREATE TABLE `oc_product_to_category` (
 --
 
 INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
+(50, 59),
 (50, 63),
 (51, 59),
 (51, 63),
@@ -2397,8 +2431,20 @@ INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
 (55, 61),
 (56, 61),
 (57, 64),
+(58, 59),
 (58, 65),
-(59, 66);
+(59, 66),
+(60, 67),
+(61, 67),
+(62, 60),
+(62, 66),
+(63, 61),
+(64, 59),
+(64, 64),
+(65, 59),
+(65, 65),
+(66, 59),
+(66, 63);
 
 -- --------------------------------------------------------
 
@@ -2436,7 +2482,14 @@ INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUE
 (56, 0, 0),
 (57, 0, 0),
 (58, 0, 0),
-(59, 0, 0);
+(59, 0, 0),
+(60, 0, 0),
+(61, 0, 0),
+(62, 0, 0),
+(63, 0, 0),
+(64, 0, 0),
+(65, 0, 0),
+(66, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -2462,7 +2515,14 @@ INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 (56, 0),
 (57, 0),
 (58, 0),
-(59, 0);
+(59, 0),
+(60, 0),
+(61, 0),
+(62, 0),
+(63, 0),
+(64, 0),
+(65, 0),
+(66, 0);
 
 -- --------------------------------------------------------
 
@@ -2666,7 +2726,7 @@ CREATE TABLE `oc_session` (
 
 INSERT INTO `oc_session` (`session_id`, `data`, `expire`) VALUES
 ('0629cd273a17a17ff473c36419', '{\"api_id\":\"1\"}', '2018-04-23 06:35:26'),
-('195c30d19c3b3f1bd859a71d74', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"user_id\":\"1\",\"user_token\":\"TwnKxNh2oWVI2WCLwsp2p4fKczWILeRD\",\"customer_id\":\"2\",\"shipping_address\":{\"address_id\":\"2\",\"firstname\":\"Northwest Missouri\",\"lastname\":\"University\",\"company\":\"\",\"address_1\":\"NORTHWEST MISSOURI STATE UNIVERSITY\",\"address_2\":\"800 university drive\",\"postcode\":\"64468\",\"city\":\"Maryville\",\"zone_id\":\"3648\",\"zone\":\"Missouri\",\"zone_code\":\"MO\",\"country_id\":\"223\",\"country\":\"United States\",\"iso_code_2\":\"US\",\"iso_code_3\":\"USA\",\"address_format\":\"{firstname} {lastname}\\r\\n{company}\\r\\n{address_1}\\r\\n{address_2}\\r\\n{city}, {zone} {postcode}\\r\\n{country}\",\"custom_field\":null},\"payment_address\":{\"address_id\":\"2\",\"firstname\":\"Northwest Missouri\",\"lastname\":\"University\",\"company\":\"\",\"address_1\":\"NORTHWEST MISSOURI STATE UNIVERSITY\",\"address_2\":\"800 university drive\",\"postcode\":\"64468\",\"city\":\"Maryville\",\"zone_id\":\"3648\",\"zone\":\"Missouri\",\"zone_code\":\"MO\",\"country_id\":\"223\",\"country\":\"United States\",\"iso_code_2\":\"US\",\"iso_code_3\":\"USA\",\"address_format\":\"{firstname} {lastname}\\r\\n{company}\\r\\n{address_1}\\r\\n{address_2}\\r\\n{city}, {zone} {postcode}\\r\\n{country}\",\"custom_field\":null}}', '2018-04-23 07:40:42'),
+('195c30d19c3b3f1bd859a71d74', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"user_id\":\"1\",\"user_token\":\"TwnKxNh2oWVI2WCLwsp2p4fKczWILeRD\",\"customer_id\":\"2\",\"shipping_address\":{\"address_id\":\"2\",\"firstname\":\"Northwest Missouri\",\"lastname\":\"University\",\"company\":\"\",\"address_1\":\"NORTHWEST MISSOURI STATE UNIVERSITY\",\"address_2\":\"800 university drive\",\"postcode\":\"64468\",\"city\":\"Maryville\",\"zone_id\":\"3648\",\"zone\":\"Missouri\",\"zone_code\":\"MO\",\"country_id\":\"223\",\"country\":\"United States\",\"iso_code_2\":\"US\",\"iso_code_3\":\"USA\",\"address_format\":\"{firstname} {lastname}\\r\\n{company}\\r\\n{address_1}\\r\\n{address_2}\\r\\n{city}, {zone} {postcode}\\r\\n{country}\",\"custom_field\":[]},\"payment_address\":{\"address_id\":\"2\",\"firstname\":\"Northwest Missouri\",\"lastname\":\"University\",\"company\":\"\",\"address_1\":\"NORTHWEST MISSOURI STATE UNIVERSITY\",\"address_2\":\"800 university drive\",\"postcode\":\"64468\",\"city\":\"Maryville\",\"zone_id\":\"3648\",\"zone\":\"Missouri\",\"zone_code\":\"MO\",\"country_id\":\"223\",\"country\":\"United States\",\"iso_code_2\":\"US\",\"iso_code_3\":\"USA\",\"address_format\":\"{firstname} {lastname}\\r\\n{company}\\r\\n{address_1}\\r\\n{address_2}\\r\\n{city}, {zone} {postcode}\\r\\n{country}\",\"custom_field\":[]},\"shipping_methods\":{\"flat\":{\"title\":\"Flat Rate\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"Flat Shipping Rate\",\"cost\":\"5.00\",\"tax_class_id\":\"9\",\"text\":\"$5.00\"}},\"sort_order\":\"1\",\"error\":false}},\"shipping_method\":{\"code\":\"flat.flat\",\"title\":\"Flat Shipping Rate\",\"cost\":\"5.00\",\"tax_class_id\":\"9\",\"text\":\"$5.00\"},\"comment\":\"\",\"payment_methods\":{\"pp_standard\":{\"code\":\"pp_standard\",\"title\":\"PayPal\",\"terms\":\"\",\"sort_order\":\"\"},\"cod\":{\"code\":\"cod\",\"title\":\"Cash On Delivery\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\",\"title\":\"Cash On Delivery\",\"terms\":\"\",\"sort_order\":\"5\"},\"order_id\":4}', '2018-04-24 04:44:34'),
 ('1a77a4c0411be91c3b15dce8d5', '{\"api_id\":\"1\"}', '2018-04-07 21:26:02'),
 ('2bbac64a9fe0fa29b71554f7f7', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"compare\":[],\"wishlist\":[],\"customer_id\":\"1\",\"shipping_address\":false}', '2018-04-15 22:24:51'),
 ('4f35db25478519febfcf83e0d1', '{\"api_id\":\"1\"}', '2018-04-23 06:37:43'),
@@ -2677,6 +2737,7 @@ INSERT INTO `oc_session` (`session_id`, `data`, `expire`) VALUES
 ('a11601ba82f87c82a632b1d2a5', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"user_id\":\"1\",\"user_token\":\"9kcx3O04FaSuSLw6TctJIbK4shJJZGSP\"}', '2018-04-17 22:59:15'),
 ('b93c42efb39701c190dde96cde', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"account\":\"guest\",\"guest\":{\"customer_group_id\":\"1\",\"firstname\":\"nithesh\",\"lastname\":\"k s\",\"email\":\"kishan.ks91411@gmail.com\",\"telephone\":\"6605280396\",\"custom_field\":[],\"shipping_address\":\"1\"},\"payment_address\":{\"firstname\":\"nithesh\",\"lastname\":\"k s\",\"company\":\"1995\",\"address_1\":\"1115 North College Drive\",\"address_2\":\"Apt. 87\",\"postcode\":\"64468\",\"city\":\"Maryville\",\"country_id\":\"216\",\"zone_id\":\"3398\",\"country\":\"Turkmenistan\",\"iso_code_2\":\"TM\",\"iso_code_3\":\"TKM\",\"address_format\":\"\",\"custom_field\":[],\"zone\":\"Dashhowuz Welayaty\",\"zone_code\":\"D\"},\"shipping_address\":{\"firstname\":\"nithesh\",\"lastname\":\"k s\",\"company\":\"1995\",\"address_1\":\"1115 North College Drive\",\"address_2\":\"Apt. 87\",\"postcode\":\"64468\",\"city\":\"Maryville\",\"country_id\":\"216\",\"zone_id\":\"3398\",\"country\":\"Turkmenistan\",\"iso_code_2\":\"TM\",\"iso_code_3\":\"TKM\",\"address_format\":\"\",\"zone\":\"Dashhowuz Welayaty\",\"zone_code\":\"D\",\"custom_field\":[]},\"comment\":\"\",\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"Cash On Delivery\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\",\"title\":\"Cash On Delivery\",\"terms\":\"\",\"sort_order\":\"5\"},\"order_id\":1,\"vouchers\":[]}', '2018-04-07 21:29:37'),
 ('bfb12b5b13ce0a3bef7c989cf6', '{\"api_id\":\"1\"}', '2018-04-23 06:35:20'),
+('c7ac328c680421d225d2452983', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"user_id\":\"1\",\"user_token\":\"OpJL4IHFKv76UehaoBWTQiTb0CNXjfha\"}', '2018-04-25 18:22:55'),
 ('ecebc753c2b734e55fe66decb3', '{\"api_id\":\"1\",\"language\":\"en-gb\",\"currency\":\"USD\"}', '2018-04-07 21:27:09'),
 ('f19ed0706379391f78fcb35bf4', '{\"api_id\":\"1\"}', '2018-04-23 06:38:11'),
 ('fa35eeb537119839ba7487d13a', '{\"api_id\":\"1\",\"language\":\"en-gb\",\"currency\":\"USD\"}', '2018-04-15 03:49:13');
@@ -2956,7 +3017,7 @@ CREATE TABLE `oc_statistics` (
 --
 
 INSERT INTO `oc_statistics` (`statistics_id`, `code`, `value`) VALUES
-(1, 'order_sale', '165.0000'),
+(1, 'order_sale', '245.0000'),
 (2, 'order_processing', '0.0000'),
 (3, 'order_complete', '0.0000'),
 (4, 'order_other', '0.0000'),
@@ -8428,7 +8489,7 @@ ALTER TABLE `oc_banner_image`
 -- AUTO_INCREMENT for table `oc_cart`
 --
 ALTER TABLE `oc_cart`
-  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `oc_category`
@@ -8470,7 +8531,7 @@ ALTER TABLE `oc_currency`
 -- AUTO_INCREMENT for table `oc_customer`
 --
 ALTER TABLE `oc_customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `oc_customer_activity`
@@ -8500,7 +8561,7 @@ ALTER TABLE `oc_customer_history`
 -- AUTO_INCREMENT for table `oc_customer_ip`
 --
 ALTER TABLE `oc_customer_ip`
-  MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `oc_customer_login`
@@ -8668,13 +8729,13 @@ ALTER TABLE `oc_option_value`
 -- AUTO_INCREMENT for table `oc_order`
 --
 ALTER TABLE `oc_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `oc_order_history`
 --
 ALTER TABLE `oc_order_history`
-  MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `oc_order_option`
@@ -8686,7 +8747,7 @@ ALTER TABLE `oc_order_option`
 -- AUTO_INCREMENT for table `oc_order_product`
 --
 ALTER TABLE `oc_order_product`
-  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `oc_order_recurring`
@@ -8716,7 +8777,7 @@ ALTER TABLE `oc_order_status`
 -- AUTO_INCREMENT for table `oc_order_total`
 --
 ALTER TABLE `oc_order_total`
-  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `oc_order_voucher`
@@ -8728,7 +8789,7 @@ ALTER TABLE `oc_order_voucher`
 -- AUTO_INCREMENT for table `oc_product`
 --
 ALTER TABLE `oc_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `oc_product_discount`
@@ -8740,7 +8801,7 @@ ALTER TABLE `oc_product_discount`
 -- AUTO_INCREMENT for table `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
-  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2440;
+  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2444;
 
 --
 -- AUTO_INCREMENT for table `oc_product_option`
